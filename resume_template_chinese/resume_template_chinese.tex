@@ -1,0 +1,233 @@
+%-------------------------
+% clean latex template
+% Author: TeranceJY
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontawesome5} % Font Awesome
+\usepackage{titlesec} % Allows creating custom \section's
+\usepackage[hidelinks]{hyperref} % Required for links and changing link options
+
+\usepackage{graphicx} % Required for including pictures
+\usepackage{tabularx} % Nicer table style than the default
+
+\usepackage{calc} % Used for calculating leftskip lengths
+\usepackage{enumitem} % Used for customizing lists
+\usepackage{ragged2e} % Used for adjusting spacing within bullets & itemlists
+
+% ----------geometry-----------------
+\usepackage{geometry}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+
+% ----------fonts-----------------
+\usepackage{fontspec}
+\usepackage{xeCJK} %% Chinese
+\CJKsetecglue{} %% Remove space between CJK and Latin characters
+
+% Main document font
+\setmainfont[
+  Path = Font/,
+  Extension =.ttf, 
+  BoldFont = Microsoft_YaHeiBold.ttf,
+  ItalicFont = Microsoft_YaHeiItalic.ttf
+]{Microsoft_YaHei.ttf}
+
+\setCJKmainfont[
+  Path = Font/,
+  Extension =.ttf,
+  BoldFont=Microsoft_YaHeiBold.ttf,
+]{Microsoft_YaHei.ttf}
+
+% ----------color-----------------
+\usepackage{xcolor}
+\definecolor{black}{RGB}{0,0,0}
+
+
+% ----------section-----------------
+
+\titleformat{\section}         % Customise the \section command
+  {\vspace{-4pt}\scshape\raggedright\large} %  Make the \section headers large (\Large),
+  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
+  {}                           % Can be used to insert code before the heading
+  [\color{black}\titlerule \vspace{-7pt}]    % Inserts a horizontal line after the heading
+
+\newcommand{\logosection}[2]{%
+  \section{\texorpdfstring{\makebox[\widthof{\faGraduationCap}][c]{\color{black}#1}\ }{} {\textbf{#2}}}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubheadingSingleLine}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}}r}
+        \textbf{#1} & {#2} &  \textit{\footnotesize{#3}} \\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\footnotesize{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X} % Left-aligned columns
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} %  Right-aligned columns
+\newcolumntype{C}{>{\centering\arraybackslash}X}  % Centered columns
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{张一二} % Your Name
+\newcommand{\personalinfo}{29岁} % Your Program
+\newcommand{\jobintention}{软件开发} % Your Roll No.
+\newcommand{\phone}{xxxxxxxxxx} % Your Phone Number
+\newcommand{\personalprofile}{
+  面向神学开发的软件开发人员，拥有8年以上为不同寺庙从事高级项目的经验。
+  精通Java、C++、Python，梵语等多种编程语言，
+  在敏捷方法论方面有着坚实的基础。} % Your personalprofile
+\newcommand{\emaila}{youremail@email.com} %Email 1
+
+\begin{document}
+
+%----------HEADING-----------------
+
+\parbox{2.35cm}{%
+\includegraphics[width=2.35cm,clip]{placeholder.jpeg}
+}
+\parbox{\dimexpr\linewidth-2.8cm\relax}{
+\begin{tabularx}{\linewidth}{L r} \\
+  \textbf{\Large \name} & {\raisebox{0.0\height}{\footnotesize \faPhone} \phone}\\
+  {Job Intention: \jobintention} & \href{mailto:\emaila}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emaila}} \\
+  {\personalinfo }&  \href{https://yourGithubProfile.com/}{\raisebox{0.0\height}{\footnotesize \faGithub}\ {GitHub Profile}}\\
+  {Other Information} &   \href{https://www.yourLinkedinProfile.com/in/}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {LinkedIn Profile}}\\
+\end{tabularx}
+}
+
+\noindent
+\begin{minipage}{\linewidth}
+\vspace{0.5\baselineskip}
+{\personalprofile} 
+\end{minipage}
+
+% -----------EDUCATION-----------
+\logosection{\faGraduationCap}{教育背景}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {哈尔滨佛学院}{GPA: 0.5/4.0}
+      {佛教與社會實踐組必修}{1988}
+      \resumeSubheading
+      {哈尔滨佛学院}{GPA: 0.5/4.0}
+      {佛教與社會實踐組必修}{1988}
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+% -----------EXPERIENCE-----------
+\logosection{\faSuitcase}{工作经验}
+  \resumeSubHeadingListStart
+    \resumeSubheadingSingleLine
+      {大理寺, 京城}{住持}{1995}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+    \item {工作描述 1}
+    \item {工作描述 2}
+    \resumeItemListEnd
+    
+    \vspace{-3.0mm}
+    
+    \resumeSubheadingSingleLine
+      {大理寺, 京城}{住持}{1995}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+    \item {工作描述 1}
+    \item {工作描述 2}
+    \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+
+%-----------PROJECTS-----------------
+\logosection{\faWrench}{个人项目}
+
+\resumeSubHeadingListStart
+
+    \resumeProject
+      {项目名称} %Project Name
+      {主要职责} 
+      {日期} %Event Dates
+
+      \resumeItemListStart
+        \item {工作内容: xxx,xxx}
+        \item {项目成果: xx}
+    \resumeItemListEnd
+    \vspace{-2mm}
+    
+    \resumeProject
+      {项目名称} %Project Name
+      {主要职责} 
+      {日期} %Event Dates
+
+      \resumeItemListStart
+        \item {工作内容: xxx,xxx}
+        \item {项目成果: xx}
+    \resumeItemListEnd
+    \vspace{-2mm}
+      
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+%-----------Technical skills-----------------
+\logosection{\faCogs}{专业技能 & 兴趣爱好}
+
+ \begin{itemize}[leftmargin=0.05in, label={}]
+    \small{\item{
+     \textbf{编程语言: }{: } \\
+     \textbf{开发工具}{: } \\
+     \textbf{开发框架平台}{: } \\
+     \textbf{兴趣爱好}{: } \\
+
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+ %-----------Achievements-----------------
+\logosection{\faTrophy}{获奖情况}
+
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+  \resumePOR{冰红茶一等奖 } % Award
+    {一箱没有瓶盖的冰红茶} % Event
+    {中奖日期} %Event Year
+    
+  \resumePOR{冰红茶特等奖 } % Award
+    {三箱没有瓶盖的冰红茶} % Event
+    {中奖日期} %Event Year
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+
+\end{document}
