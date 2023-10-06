@@ -3,7 +3,8 @@
 ## 1. Introduction
 
 This project provides a clean LaTeX template for resumes. It is designed to be easy to use and customizable, providing a straightforward way for individuals to create a sleek and organized curriculum vitae。
-![中文版本](README_CN.md)
+
+[中文版本](README_CN.md)
 
 ## 2. Building the .tex File to Generate a PDF
 
